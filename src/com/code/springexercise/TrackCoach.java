@@ -2,8 +2,7 @@ package com.code.springexercise;
 
 public class TrackCoach implements Coach {
 
-	private FortuneService fortuneService;
-	
+	private FortuneService fortuneService;	
 	public TrackCoach() {
 		
 	}
@@ -23,5 +22,13 @@ public class TrackCoach implements Coach {
 		// TODO Auto-generated method stub
 		return "Just Do It: " + fortuneService.getFortune();
 	}
-
+	// adding an init method
+	public void doStartInit(){
+		System.out.println("TrackCoach: inside doStartInit method");
+	}
+	
+	// adding a destroy method
+	public void doDestroy(){
+		System.out.println("TrackCoach: inside doDestroy method");
+	}
 }

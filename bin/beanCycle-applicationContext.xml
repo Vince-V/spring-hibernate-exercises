@@ -15,8 +15,9 @@
     </bean>
     
     <bean id="myCoach"
-        class="com.code.springexercise.TrackCoach"     
-        scope = "prototype"> <!-- using prototype will create a new object every time, if no scope is given, default is singleton-->
+        class="com.code.springexercise.TrackCoach"
+        init-method="doStartInit"
+        destroy-method="doDestroy">
         
          <!-- set up constructor injection -->
           <constructor-arg ref="myFortuneService"/>
