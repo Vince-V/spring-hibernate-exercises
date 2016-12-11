@@ -9,16 +9,21 @@ public class JavaConfigSpringApp {
 		
 		// will first read the spring configuration java class
 		AnnotationConfigApplicationContext context = 
-				new AnnotationConfigApplicationContext("bin.com.code.springannotations.SpringConfig.class");
+				new AnnotationConfigApplicationContext(SpringConfig.class);
 		
 		// get bean from spring container
-		Instructor theInstructor = context.getBean("javaInstructor", Instructor.class);
+		SpringInstructor theInstructor = context.getBean("springInstructor", SpringInstructor.class);
 		
 		// call methods on the bean
 		System.out.println(theInstructor.getDailyPractice());
 		
 		// call method , get daily infoservice
 		System.out.println(theInstructor.getDailyInfoService());	
+		
+		// utilize new spring instructor methods to check if property values injected
+//		System.out.println("email: " + theInstructor.getEmail() );	
+//		System.out.println("team: " + theInstructor.getTeam() );	
+		
 		
 		// close context
 		context.close();

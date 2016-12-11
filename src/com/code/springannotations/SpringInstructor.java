@@ -1,8 +1,16 @@
 package com.code.springannotations;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class SpringInstructor implements Instructor {
 
 	private InfoService infoService;
+	
+//	@Value("${springpractice.email}")
+//	private String email;
+//	
+//	@Value("${springpractice.team}")
+//	private String team;
 	
 	public SpringInstructor(InfoService theInfoService){
 		infoService = theInfoService;
@@ -22,5 +30,15 @@ public class SpringInstructor implements Instructor {
 	public String getDailyResults() {
 		return null;
 	}
+
+//	public String getEmail() {
+//		return email;
+//	}
+//
+//	public String getTeam() {
+//		return team;
+//	}
+	
+	
 
 }
